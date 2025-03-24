@@ -18,7 +18,9 @@ int main() {
 	cout << "Matrix: \n" << convert_to_string(matrix, n, m);
 
 	cout << "Max number from the ordered lines: "
-		<< get_max_element_from_all_ordered_lines(matrix, n, m) << endl;
+		<< (get_max_element_from_all_ordered_lines(matrix, n, m) != -1
+			? to_string(get_max_element_from_all_ordered_lines(matrix, n, m))
+			: "there is no any ordered lines.") << endl;
 
 	for (int i = 0; i < n; i++) {
 
