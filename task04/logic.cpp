@@ -31,10 +31,12 @@ int get_sum_of_elements_between_positive_values(int** matrix, int n, int m) {
 
 	for (int i = 0; i < n; i++) {
 
-		if (get_first_pos_index(matrix, i, m) != get_second_pos_index(matrix, i, m)) {
+		int fst_index = get_first_pos_index(matrix, i, m);
+		int scnd_index = get_second_pos_index(matrix, i, m);
 
-			for (int j = get_first_pos_index(matrix, i, m) + 1; j
-				< get_second_pos_index(matrix, i, m); j++) {
+		if (fst_index != scnd_index) {
+
+			for (int j = fst_index + 1; j < scnd_index; j++) {
 
 				sum += matrix[i][j];
 			}
